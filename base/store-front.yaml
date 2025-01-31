@@ -16,11 +16,11 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: store-front
-        image: ghcr.io/onesmus1024/aks-store-demo/store-front:latest # {"$imagepolicy": "flux-system:store-front"}
+        image: ghcr.io/onesmus1024/aks-store-demo/store-front:4.0.0 # {"$imagepolicy": "flux-system:store-front"}
         ports:
         - containerPort: 8080
           name: store-front
-        env: 
+        env:
         - name: VUE_APP_ORDER_SERVICE_URL
           value: "http://order-service:3000/"
         - name: VUE_APP_PRODUCT_SERVICE_URL
